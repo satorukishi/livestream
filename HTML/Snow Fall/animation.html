@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Snow Fall</title>
+        <style>
+body {
+    background-image: url("img/background.png");
+    margin: 0px;
+}
+div {
+    width: 90%;
+    height: 70%;
+    font-size: 200px;
+}
+
+img {
+    position: absolute;
+    top: 20px;
+    left: 0px;
+    width: 50px;
+
+    animation-name: snow-fall;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+}
+
+@keyframes snow-fall {
+    from { top: -25px; transform: rotate(0deg); }
+    to { top: 100vh; transform: rotate(360deg);}
+
+}
+
+        </style>
+    </head>
+    <body>
+        <div id="divSnow"></div>
+
+        <script>
+    var intervalId = setInterval(snowFall, 500)
+    var idSnow = 0;
+
+    function snowFall() {
+        if (idSnow < 48) {
+            imgSnow = "imgSnow" + ++idSnow;
+            var div = document.getElementById("divSnow");
+            var img = document.createElement("img");
+            img.setAttribute("id", imgSnow)
+            img.setAttribute("src", "img/snow.png");
+            
+            div.appendChild(img);
+
+            editImage(imgSnow)
+        }
+    }
+
+    function editImage(imgSnow) {
+        img = document.getElementById(imgSnow)
+        
+        // Width
+        img.style.width = randomFloat(10, 50) + "px";
+
+        // Opacity
+        img.style.opacity = randomFloat(0.5, 1);
+
+        // Blur
+        rngBlur = randomFloat(0, 4);
+        img.style.webkitFilter = "blur(" + rngBlur + "px)";
+        img.style.filter = "blur(" + rngBlur + "px)";
+
+        // X Position
+        img.style.left = randomFloat(25, 1895) + "px";
+
+        // Speed
+        img.style.animationDuration = randomFloat(4, 15) + "s";
+    }
+
+    function randomFloat(min, max) {
+        return min + (max - min) * Math.random();
+    }
+
+    function randomInt(min, max) {
+        return min + Math.floor((max - min) * Math.random());
+    }
+
+        </script>
+    </body>
+</html>

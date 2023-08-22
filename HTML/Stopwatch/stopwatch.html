@@ -1,0 +1,644 @@
+<html>
+
+<head>
+    <style type="text/css">
+        body {
+            margin: 0px
+        }
+
+        #container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cronometro {
+            font-family: 'Super Mario 256', 'Arial';
+            font-size: 220px;
+            text-align: left;
+            font-stretch: 200%;
+            -webkit-text-stroke: 8px black;
+            /* text-shadow: 30px 30px 3px #3C0000; */
+            text-shadow: 30px 30px 3px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="chronotime" class="cronometro">00:00:00.000</div>
+    </div>
+
+    <script type="text/javascript" src="script/js/jquery-3.4.1.min.js"></script>
+
+    <audio id="nocountdown">
+        <source src="countdown/nocountdown.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <span id="naoFazNada">
+
+        <!--Brawl Stars-->
+        <span id="BrawlStarsAudio">
+            <audio id="herewego-bs">
+                <source src="herewego/brawl-stars.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="countdown-brawlstars">
+                <source src="countdown/brawl-stars/countdown.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="waittime-brawlstars">
+                <source src="waittime/brawl-stars/waittime.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </span>
+        <!--Cod-->
+        <span id="CodAudio">
+            <audio id="herewego-codm">
+                <source src="herewego/codm.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="countdown-codm">
+                <source src="countdown/codm/countdown.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="waittime-codm">
+                <source src="waittime/codm/waittime.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </span>
+        <!--Donkey Kong Country-->
+        <span id="CodAudio">
+            <audio id="herewego-dkc">
+                <source src="herewego/dkc.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="countdown-dkc">
+                <source src="countdown/dkc/countdown.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="waittime-dkc">
+                <source src="waittime/dkc/waittime.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </span>
+        <!--Metal Slug-->
+        <span id="MslugAudio">
+            <audio id="herewego-mslug">
+                <source src="herewego/mslug.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="countdown-mslug">
+                <source src="countdown/mslug/countdown.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="waittime-mslug">
+                <source src="waittime/mslug/waittime.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </span>
+        <!--Sonic-->
+        <span id="SonicAudio">
+            <audio id="herewego-sonic">
+                <source src="herewego/sonic.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="countdown-sonic">
+                <source src="countdown/sonic/countdown.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="waittime-sonic">
+                <source src="waittime/sonic/waittime.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </span>
+
+        <!--Street of Rage 2-->
+        <span id="SRAudio">
+            <audio id="herewego-sr2">
+                <source src="herewego/sr2.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="countdown-sr2">
+                <source src="countdown/sr2/countdown.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="waittime-sr2">
+                <source src="waittime/sr2/waittime.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </span>
+
+        <!--Super Bomberman-->
+        <span id="SBManAudio">
+            <audio id="herewego-sbman">
+                <source src="herewego/sbman.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="countdown-sbman">
+                <source src="countdown/sbman/countdown.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="waittime-sbman">
+                <source src="waittime/sbman/waittime.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </span>
+
+        <!--Street of Rage 2-->
+        <span id="MameAudio">
+            <audio id="herewego-ssriders">
+                <source src="herewego/ssriders.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="countdown-ssriders">
+                <source src="countdown/ssriders/countdown.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="waittime-ssriders">
+                <source src="waittime/ssriders/waittime.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </span>
+
+        <span id="SuperMarioAudio">
+            <audio id="herewego-sm">
+                <source src="herewego/super-mario.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <!--COUNTDOWN-->
+            <audio id="countdown-mk3ds">
+                <source src="countdown/SMB/mk3ds.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="countdown-mkds">
+                <source src="countdown/SMB/mkds.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="countdown-mkgba">
+                <source src="countdown/SMB/mkgba.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="countdown-mkwii">
+                <source src="countdown/SMB/mkwii.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="countdown-mkwiiu">
+                <source src="countdown/SMB/mkwiiu.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="countdown-mk64">
+                <source src="countdown/SMB/mk64.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="countdown-nsmb">
+                <source src="countdown/SMB/nsmb.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="countdown-sm3dland">
+                <source src="countdown/SMB/SM3DLand.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="countdown-smb">
+                <source src="countdown/SMB/smb.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="countdown-smb3">
+                <source src="countdown/SMB/SMB3.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <!-- <audio id="countdown-smb2">
+            <source src="countdown/SMB/SMB2.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio> -->
+            <audio id="countdown-smk">
+                <source src="countdown/SMB/SMK.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="countdown-smw">
+                <source src="countdown/SMB/SMW.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+
+            <!--WAITTIME-->
+            <audio id="waittime-mk3ds">
+                <source src="waittime/SMB/mk3ds.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="waittime-mkds">
+                <source src="waittime/SMB/mkds.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="waittime-mkgba">
+                <source src="waittime/SMB/mkgba.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="waittime-mkwii">
+                <source src="waittime/SMB/mkwii.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="waittime-mkwiiu">
+                <source src="waittime/SMB/mkwiiu.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="waittime-mk64">
+                <source src="waittime/SMB/mk64.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="waittime-nsmb">
+                <source src="waittime/SMB/nsmb.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="waittime-sm3dland">
+                <source src="waittime/SMB/SM3DLand.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="waittime-smb">
+                <source src="waittime/SMB/smb.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="waittime-smb2">
+                <source src="waittime/SMB/SMB2.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="waittime-smb3">
+                <source src="waittime/SMB/SMB3.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="waittime-smk">
+                <source src="waittime/SMB/SMK.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="waittime-smw">
+                <source src="waittime/SMB/SMW.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </span>
+
+    </span>
+
+    <script type="text/javascript" language="javascript">
+        jogo = "brawl stars";
+        // jogo = "codm";
+        // jogo = "dkc";
+        // jogo = "mk3ds";
+        // jogo = "mk64";
+        // jogo = "mkds";
+        // jogo = "mkgba";
+        // jogo = "mkwii";
+        // jogo = "mkwiiu";
+        // jogo = "mslug";
+        // jogo = "nsmb";
+        // jogo = "sbman";
+        // jogo = "sm3dland";
+        // jogo = "smb";
+        // jogo = "smb2";
+        // jogo = "smb3";
+        // jogo = "smk";
+        // jogo = "smw";
+        // jogo = "sonic";
+        // jogo = "sr2";
+        // jogo = "ssriders";
+        game = null;
+        segundos = 121;
+        // segundos = 19;
+        isCountdownPlayed = false;
+
+        jogos = {
+            games: [
+                {
+                    game: "brawl stars", // ID do Jogo
+                    countdown: "countdown-brawlstars", // Som que toca avisando dos últimos segundos | null não toca nada e avança para hurrytime
+                    waittime: "waittime-brawlstars", // Música que toca enquanto aguarda
+                    hurryWaittime: false, // true == toca waittime acelerado | false == não toca nada
+                    herewego: "herewego-bs" // música que toca quando acaba o tempo
+                },
+                {
+                    game: "codm",
+                    countdown: null,
+                    waittime: "waittime-codm",
+                    hurryWaittime: true,
+                    herewego: "herewego-codm"
+                },
+                {
+                    game: "dkc",
+                    countdown: null,
+                    waittime: "waittime-dkc",
+                    hurryWaittime: true,
+                    herewego: "herewego-dkc"
+                },
+                {
+                    game: "mk3ds",
+                    countdown: "countdown-mk3ds",
+                    waittime: "mk3ds",
+                    hurryWaittime: true,
+                    herewego: "herewego-sm"
+                },
+                {
+                    game: "mkds",
+                    countdown: "countdown-mkds",
+                    waittime: "waittime-mkds",
+                    hurryWaittime: true,
+                    herewego: "herewego-sm"
+                },
+                {
+                    game: "mkgba",
+                    countdown: "countdown-mkgba",
+                    waittime: "waittime-mkgba",
+                    hurryWaittime: true,
+                    herewego: "herewego-sm"
+                },
+                {
+                    game: "mkwiiu",
+                    countdown: "countdown-mkwiiu",
+                    waittime: "waittime-mkwiiu",
+                    hurryWaittime: true,
+                    herewego: "herewego-sm"
+                },
+                {
+                    game: "mkwii",
+                    countdown: "countdown-mkwii",
+                    waittime: "waittime-mkwii",
+                    hurryWaittime: true,
+                    herewego: "herewego-sm"
+                },
+                {
+                    game: "mk64",
+                    countdown: "countdown-mk64",
+                    waittime: "waittime-mk64",
+                    hurryWaittime: true,
+                    herewego: "herewego-sm"
+                },
+                {
+                    game: "mslug",
+                    countdown: null,
+                    waittime: "waittime-mslug",
+                    hurryWaittime: true,
+                    herewego: "herewego-mslug"
+                },
+                {
+                    game: "nsmb",
+                    countdown: "countdown-nsmb",
+                    waittime: "waittime-nsmb",
+                    hurryWaittime: true,
+                    herewego: "herewego-sm"
+                },
+                {
+                    game: "sbman",
+                    countdown: "countdown-sbman",
+                    waittime: "waittime-sbman",
+                    hurryWaittime: true,
+                    herewego: "herewego-sbman"
+                },
+                {
+                    game: "sm3dland",
+                    countdown: "countdown-sm3dland",
+                    waittime: "waittime-sm3dland",
+                    hurryWaittime: true,
+                    herewego: "herewego-sm"
+                },
+                {
+                    game: "smb",
+                    countdown: "countdown-smb",
+                    waittime: "waittime-smb",
+                    hurryWaittime: true,
+                    herewego: "herewego-sm"
+                },
+                {
+                    game: "smb2",
+                    countdown: null,
+                    waittime: "waittime-smb2",
+                    hurryWaittime: true,
+                    herewego: "herewego-sm"
+                },
+                {
+                    game: "smb3",
+                    countdown: "countdown-smb3",
+                    waittime: "waittime-smb3",
+                    hurryWaittime: true,
+                    herewego: "herewego-sm"
+                },
+                {
+                    game: "smk",
+                    countdown: "countdown-smk",
+                    waittime: "waittime-smk",
+                    hurryWaittime: true,
+                    herewego: "herewego-sm"
+                },
+                {
+                    game: "smw",
+                    countdown: "countdown-smw",
+                    waittime: "waittime-smw",
+                    hurryWaittime: true,
+                    herewego: "herewego-sm"
+                },
+                {
+                    game: "sonic",
+                    countdown: "countdown-sonic",
+                    waittime: "waittime-sonic",
+                    hurryWaittime: false,
+                    herewego: "herewego-sonic"
+                },
+                {
+                    game: "sr2",
+                    countdown: null,
+                    waittime: "waittime-sr2",
+                    hurryWaittime: true,
+                    herewego: "herewego-sr2"
+                },
+                {
+                    game: "ssriders",
+                    countdown: null,
+                    waittime: "waittime-ssriders",
+                    hurryWaittime: true,
+                    herewego: "herewego-ssriders"
+                },
+            ]
+
+        }
+
+
+        var start = 0
+        var end = 0
+        var diff = 0
+        var timerID = 0;
+        var hexaColor = ["#FF3537", "#00CB00", "#00DEFF", "#FFCD00", "#00DEFF"] // Red Green Blue Red Blue
+
+        playWaitTime(1.0);
+        chronoStart();
+
+        function getGame() {
+            if (game == null) {
+                for (i = 0; i < jogos.games.length; i++) {
+                    if (jogos.games[i].game == jogo) {
+                        game = jogos.games[i];
+                    }
+                }
+            }
+
+            return game;
+        }
+
+        function playStart() {
+            play(getGame().herewego);
+        }
+
+        function playCountdown() {
+            audioId = getGame().countdown ? getGame().countdown : "nocountdown";
+            var audio;
+            // if (audioId != null) {
+            audio = document.getElementById(audioId)
+            // } else {
+            //     audio = document.getElementById("nocountdown");
+            // }
+
+            isCountdownPlayed = true;
+            play(audioId);
+
+            if (getGame().hurryWaittime && getGame().waittime != "") {
+                audio.addEventListener("ended", callPlayWaitTime);
+            }
+
+        }
+
+        function chrono() {
+            start = new Date()
+            diff = end - start
+            diff = new Date(diff)
+            var msec = diff.getMilliseconds()
+            var sec = diff.getSeconds()
+            var min = diff.getMinutes()
+            var hr = diff.getHours() - 21
+            // var hr = diff.getHours() - 22 // Microsoft Edge
+
+            // Formata as Horas
+            if (min < 10) {
+                min = "0" + min
+            }
+            if (sec < 10) {
+                sec = "0" + sec
+            }
+            if (msec < 10) {
+                msec = "00" + msec
+            }
+            else if (msec < 100) {
+                msec = "0" + msec
+            }
+
+            // Exibe
+            if (hr == 0 && min == 0 && sec <= 15) {
+                document.getElementById("chronotime").innerHTML = sec
+                if (!isCountdownPlayed) {
+                    stopWaitTime()
+                    playCountdown();
+                }
+            } else if (hr > 0) {
+                document.getElementById("chronotime").innerHTML = hr + ":" + min + ":" + sec + "." + msec
+            } else {
+                document.getElementById("chronotime").innerHTML = min + ":" + sec
+            }
+
+            // Pinta as Horas
+            cssHour();
+
+            // Para o cronometro
+            if (hr == 0 && min == 0 && sec == 0) {
+                chronoStop()
+                stopWaitTime()
+                playStart();
+            } else {
+                timerID = setTimeout("chrono()", 10)
+            }
+
+        }
+
+        function getBackground() {
+            return "url('d:/Videos/Adobe Premiere/Satoru/YouTube/Live/" + end.getFullYear() + (end.getMonth()+1+"").toString().padStart(2, '0') + end.getDate().toString().padStart(2, '0') + ".jpg')";
+
+        }
+
+        function chronoStart() {
+            end = new Date();
+            document.getElementsByTagName("body")[0].style.backgroundImage = getBackground();
+            end.setSeconds(end.getSeconds() + segundos)
+            chrono()
+        }
+        function chronoContinue() {
+            start = new Date() - diff
+            start = new Date(start)
+            chrono()
+        }
+        function chronoReset() {
+            document.getElementById("chronotime").innerHTML = "0:00:00:000"
+            start = new Date()
+        }
+        function chronoStopReset() {
+            document.getElementById("chronotime").innerHTML = "0:00:00:000"
+        }
+        function chronoStop() {
+            clearTimeout(timerID)
+        }
+
+        function play(player) {
+            var audio = document.getElementById(player);
+
+            audio.volume = 1;
+            audio.play();
+        }
+
+        function callPlayWaitTime() {
+            var audio = document.getElementById(getGame().countdown ? getGame().countdown : "nocountdown");
+            audio.pause();
+
+            playWaitTime(1.25);
+            audio.removeEventListener("ended", callPlayWaitTime);
+        }
+
+        function playWaitTime(playbackRate) {
+            if (getGame().waittime != "") {
+                var audio = document.getElementById(getGame().waittime);
+                audio.playbackRate = playbackRate;
+                audio.currentTime = 0;
+                audio.volume = 1;
+                audio.play();
+            }
+        }
+
+        function stopWaitTime() {
+            if (getGame().waittime != "") {
+                var audio = document.getElementById(getGame().waittime);
+                audio.pause();
+            }
+        }
+
+        function cssHour() {
+            var chars = $("#chronotime").text().split("")
+
+
+            // if (chars.length == 2) {
+            $("#chronotime").css({
+                textAlign: "center"
+            })
+            // } else {
+            // $("#chronotime").css({
+            //     textAlign: "left"
+            // })
+            // }
+
+            $("#chronotime").text("")
+
+            for (i = 0; i < chars.length; i++) {
+                $("<span>").text(chars[i]).css({
+                    color: hexaColor[i % hexaColor.length]
+                }).appendTo("#chronotime")
+            }
+
+        }
+    </script>
+</body>
+
+</html>

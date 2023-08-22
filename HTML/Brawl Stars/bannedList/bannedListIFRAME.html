@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        .container {
+            width: 390px;
+            height: 310px;
+            border-radius: 15px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding-left: 10px;
+            padding-right: 10px;
+            font-family: 'Lilita One';
+            font-size: 40px;
+            color: white;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: black;
+            text-shadow: 0px 2px 0px black;
+        }
+
+        .bans {
+            vertical-align: middle;
+            padding: 5px;
+        }
+
+        .url {
+            width: 100%;
+        }
+
+        .avatar {
+            height: 90px;
+            vertical-align: top;
+            padding: 3px;
+        }
+
+        #iframeBans {
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container" class="container">
+        <table>
+            <tr>
+                <td rowspan="3" class="bans">Bans:</td>
+                <td><img id="imgHome" class="avatar" onerror="this.style.display='none'"></td>
+                <td><img id="imgAway" class="avatar" onerror="this.style.display='none'"></td>
+            </tr>
+            <tr>
+                <td><img id="imgHomeBan1" class="avatar" onerror="this.style.display='none'"></td>
+                <td><img id="imgAwayBan1" class="avatar" onerror="this.style.display='none'"></td>
+            </tr>
+            <tr>
+                <td><img id="imgHomeBan2" class="avatar" onerror="this.style.display='none'"></td>
+                <td><img id="imgAwayBan2" class="avatar" onerror="this.style.display='none'"></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        pathTeams = "teams/";
+        pathBrawlers = "brawlers/";
+
+        imgHome = document.getElementById("imgHome");
+        imgAway = document.getElementById("imgAway");
+        imgHomeBan1 = document.getElementById("imgHomeBan1");
+        imgHomeBan2 = document.getElementById("imgHomeBan2");
+        imgAwayBan1 = document.getElementById("imgAwayBan1");
+        imgAwayBan2 = document.getElementById("imgAwayBan2");
+
+        // Reference: https://www.sitepoint.com/get-url-parameters-with-javascript/
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+
+        imgHome.src = pathTeams + urlParams.get("timeCasa");
+        imgAway.src = pathTeams + urlParams.get("timeVisitante");
+
+        imgHomeBan1.src = pathBrawlers + urlParams.get("casaBan1");
+        imgHomeBan2.src = pathBrawlers + urlParams.get("casaBan2");
+
+        imgAwayBan1.src = pathBrawlers + urlParams.get("visitanteBan1");
+        imgAwayBan2.src = pathBrawlers + urlParams.get("visitanteBan2");
+
+    </script>
+</body>
+
+</html>

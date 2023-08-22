@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Neve Caindo</title>
+        <style>
+body {
+    background-image: url("img/background.png");
+    margin: 0px;
+}
+
+div.menu {
+    display: inline-block;
+    vertical-align: top;
+    padding: 5px;
+}
+
+div.itemMenu {
+    text-align: right;
+    width: 220px;
+}
+
+.divInput {
+    text-align: left;
+}
+
+img {
+    width: 30px;
+    position: absolute;
+    top: 0px;
+    left: 400px;
+    transition-property: top;
+}
+        </style>
+    </head>
+    <body>
+        <div class="menu">
+            <div>
+                <div class="menu itemMenu">Image size:</div>
+                <div class="menu divInput">
+                    <input type="range" id="rngSize" min="10" max="50" value="30" onchange="editImage()" />
+                </div>
+            </div>
+            <div>
+                <div class="menu itemMenu">Opacity:</div>
+                <div class="menu divInput">
+                    <input type="range" id="rngOpacity" min="0.5" max="1" step="0.01" value="1" onchange="editImage()" />
+                </div>
+                
+            </div>
+            <div>
+                <div class="menu itemMenu">Blur:</div>
+                <div class="menu divInput">
+                    <input type="range" id="rngBlur" min="0" max="4" value="0" onchange="editImage()" />
+                </div>
+                
+            </div>
+            <div>
+                <div class="menu itemMenu">Speed:</div>
+                <div class="menu divInput">
+                    <input type="range" id="rngSpeed" min="1" max="3" value="0" step="0.1" onchange="editImage()" />
+                </div>
+                
+            </div>
+        </div>
+        <div>
+            <img id="imgSnow" src="img/snow.png" />
+        </div>
+        
+        <script>
+function editImage() {
+    img = document.getElementById("imgSnow")
+    rngSize = document.getElementById("rngSize")
+    rngOpacity = document.getElementById("rngOpacity")
+    rngBlur = document.getElementById("rngBlur")
+    rngSpeed = document.getElementById("rngSpeed")
+    // Tamanho
+    img.style.width = rngSize.value + "px";
+
+    // Opacity
+    img.style.opacity = rngOpacity.value;
+
+    // Foco
+    img.style.webkitFilter = "blur(" + rngBlur.value + "px)";
+    // img.style.moz.filter = "blur(" + rngBlur.value + "px)";
+    // img.style.o.filter = "blur(" + rngBlur.value + "px)";
+    // img.style.ms.filter = "blur(" + rngBlur.value + "px)";
+    img.style.filter = "blur(" + rngBlur.value + "px)";
+
+    // Speed
+    img.style.transitionDuration = "0s";
+    img.style.top = "0px";
+    img.style.transitionDuration = 15 / rngSpeed.value + "s";
+    img.style.top = "1080px";
+}
+        </script>
+    </body>
+</html>

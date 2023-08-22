@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+
+html, body {
+  margin: 0px;
+  height: 91%;
+  font-size: 18px;
+  font-family: "Sacramento", sans-serif;
+  background-color: #010a00;
+  justify-content: center;
+  align-items: center;
+}
+
+div {
+  height: calc(100% - 74px);
+  margin: 2.8rem;
+  text-align: center;
+  font-weight: 400;
+  font-size: 3.1rem;
+  border: 0.2rem solid #fff;
+  border-radius: 2rem;
+  padding: 0.4em;
+}
+
+@keyframes pulsate {
+    
+  100% {
+    
+    box-shadow:
+      0 0 .2rem #fff,
+      0 0 .2rem #fff,
+      0 0 2rem #bc13fe,
+      0 0 0.8rem #bc13fe,
+      0 0 2.8rem #bc13fe,
+      inset 0 0 1.3rem #bc13fe; 
+
+    text-shadow:
+      0 0 4px #fff,
+      0 0 11px #fff,
+      0 0 19px #fff,
+      0 0 40px #bc13fe,
+      0 0 80px #bc13fe,
+      0 0 90px #bc13fe,
+      0 0 100px #bc13fe,
+      0 0 150px #bc13fe;
+  
+  }
+  
+  0% {
+    
+    box-shadow:
+      0 0 .1rem #fff,
+      0 0 .1rem #fff,
+      0 0 .2rem #bc13fe,
+      0 0 0.2rem #bc13fe,
+      0 0 0.8rem #bc13fe,
+      inset 0 0 1.3rem #bc13fe;
+
+    text-shadow:
+      0 0 2px #fff,
+      0 0 4px #fff,
+      0 0 6px #fff,
+      0 0 10px #bc13fe,
+      0 0 45px #bc13fe,
+      0 0 55px #bc13fe,
+      0 0 70px #bc13fe,
+      0 0 80px #bc13fe;
+  }
+}
+
+
+.neonText {
+  color: #fff;
+}
+
+    </style>
+  </head>
+<body>
+  <div id="content" class="neonText calculated-width">
+      <span id="hexa">Hexa</span>
+      <input type="color" id="colorSelector" oninput="updateColor()" value="#0091ff" />
+  </div>
+
+  <script type="text/javascript">
+    isDebug = false;
+    selectedColor = "";
+    
+    // Common, Rare, Epic, Legendary, Champion
+    colors = ["#44dffd", "#fd6500", "#ca00fd", "#e8a6ff", "#f0d626"];
+    cont = colors.length - 1;
+
+    updateColor();
+    setInterval(updateColor, 3000);
+
+    function getColor() {
+      if (isDebug) {
+        return document.getElementById("colorSelector").value;
+      }
+
+      if (cont == colors.length - 1) {
+        cont = 0;
+      } else {
+        cont++;
+      }
+
+      return colors[cont];
+    }
+
+    function updateColor() {
+      selectedColor = getColor();
+      document.getElementById("hexa").textContent = selectedColor;
+
+      animate();
+    }
+
+    function animate() {
+
+      content = document.getElementById("content").animate([
+        // key frames
+        {
+          boxShadow: "0 0 .1rem #fff, 0 0 .1rem #fff, 0 0 .2rem " + selectedColor + ", 0 0 0.2rem " + selectedColor + ", 0 0 0.8rem " + selectedColor + ", inset 0 0 1.3rem " + selectedColor,
+          textShadow: "0 0 1px #fff, 0 0 2px #fff, 0 0 6px " + selectedColor + ", 0 0 5px " + selectedColor + ", 0 0 23px " + selectedColor + ", 0 0 28px " + selectedColor + ", 0 0 35px " + selectedColor + ", 0 0 40px " + selectedColor
+        },
+        {
+          boxShadow: "0 0 .2rem #fff, 0 0 .2rem #fff, 0 0  2rem " + selectedColor + ", 0 0 0.8rem " + selectedColor + ", 0 0 2.8rem " + selectedColor + ", inset 0 0 1.3rem " + selectedColor,
+          textShadow: "0 0 4px #fff, 0 0 11px #fff, 0 0 19px " + selectedColor + ", 0 0 40px " + selectedColor + ", 0 0 80px " + selectedColor + ", 0 0 90px " + selectedColor + ", 0 0 100px " + selectedColor + ", 0 0 150px " + selectedColor
+        },
+      ], {
+        // sync options
+        duration: 1500,
+        iterations: Infinity,
+        direction: "alternate",
+      })
+    }
+  </script>
+</body>
+</html>
