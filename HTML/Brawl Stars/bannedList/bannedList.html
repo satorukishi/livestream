@@ -18,308 +18,26 @@
     </style>
 </head>
 
-<body onload="montaUrl();">
+<body onload="generateUrl();">
     <div>
         Casa:
-        <select id="selCasa" onchange="montaUrl()">
-            <option>Selecione</option>
-            <option value="4K TEAM GAMING.png">4K TEAM GAMING</option>
-            <option value="BANANA CLUB.png">BANANA CLUB</option>
-            <option value="CLÃ HOZURA.png">CLÃ HOZURA</option>
-            <option value="ELITE GROUP.png">ELITE GROUP</option>
-            <option value="GAME OVER.png" selected>GAME OVER</option>
-            <option value="LOS BROTHERS.png">LOS BROTHERS</option>
-            <option value="NUCLEAR GAMING.png">NUCLEAR GAMING</option>
-        </select>
+        <select id="selCasa" onchange="generateUrl()"></select>
 
         Ban 1:
-        <select id="selCasaBan1" onchange="montaUrl()">
-            <option>Selecione</option>
-            <option value="portrait_8bit.png">8bit</option>
-            <option value="portrait_amber.png">Amber</option>
-            <option value="portrait_ash.png">Ash</option>
-            <option value="portrait_barley.png">Barley</option>
-            <option value="portrait_bea.png">Bea</option>
-            <option value="portrait_Belle.png">Belle</option>
-            <option value="portrait_bibi.png">Bibi</option>
-            <option value="portrait_bo.png">Bo</option>
-            <option value="portrait_bonnie.png">Bonnie</option>
-            <option value="portrait_brock.png">Brock</option>
-            <option value="portrait_bull.png">Bull</option>
-            <option value="portrait_buzz.png">Buzz</option>
-            <option value="portrait_byron.png">Byron</option>
-            <option value="portrait_carl.png">Carl</option>
-            <option value="portrait_chester.png">Chester</option>
-            <option value="portrait_Colette.png">Colette</option>
-            <option value="portrait_colt.png">Colt</option>
-            <option value="portrait_cornelius.png">Cornelius</option>
-            <option value="portrait_crow_end.png">Crow</option>
-            <option value="portrait_darryl.png">Darryl</option>
-            <option value="portrait_edgar.png">Edgar</option>
-            <option value="portrait_emz.png" selected>Emz</option>
-            <option value="portrait_eve.png">eve</option>
-            <option value="portrait_fang.png">Fang</option>
-            <option value="portrait_frank.png">Frank</option>
-            <option value="portrait_gale.png">Gale</option>
-            <option value="portrait_gene.png">Gene</option>
-            <option value="portrait_Griff.png">Griff</option>
-            <option value="portrait_grom.png">Grom</option>
-            <option value="portrait_jacky.png">Jacky</option>
-            <option value="portrait_janet.png">Janet</option>
-            <option value="portrait_jessie_new.png">Jessie</option>
-            <option value="portrait_leon.png">Leon</option>
-            <option value="portrait_lola.png">Lola</option>
-            <option value="portrait_Lou.png">Lou</option>
-            <option value="portrait_maisie.png">Maisie</option>
-            <option value="portrait_mandy.png">Mandy</option>
-            <option value="portrait_max.png">Max</option>
-            <option value="portrait_Meg.png">Meg</option>
-            <option value="portrait_mike.png">Mike</option>
-            <option value="portrait_mortis.png">Mortis</option>
-            <option value="portrait_mrp.png">Mr. P</option>
-            <option value="portrait_nani.png">Nani</option>
-            <option value="portrait_nita.png">Nita</option>
-            <option value="portrait_otis.png">Otis</option>
-            <option value="portrait_pam.png">Pam</option>
-            <option value="portrait_penny.png">Penny</option>
-            <option value="portrait_piper.png">Piper</option>
-            <option value="portrait_poco.png">Poco</option>
-            <option value="portrait_primo.png">Primo</option>
-            <option value="portrait_rico.png">Rico</option>
-            <option value="portrait_rosa.png">Rosa</option>
-            <option value="portrait_rt.png">RT</option>
-            <option value="portrait_ruffs.png">Ruffs</option>
-            <option value="portrait_sam.png">Sam</option>
-            <option value="portrait_sandy.png">Sandy</option>
-            <option value="portrait_shelly.png">Shelly</option>
-            <option value="portrait_spike.png">Spike</option>
-            <option value="portrait_sprout.png">Sprout</option>
-            <option value="portrait_stu.png">Stu</option>
-            <option value="portrait_surge_end.png">Surge</option>
-            <option value="portrait_tara.png">Tara</option>
-            <option value="portrait_tick.png">Tick</option>
-            <option value="portrait_willow.png">Willow</option>
-        </select>
+        <select id="selCasaBan1" onchange="generateUrl()"></select>
 
         Ban 2:
-        <select id="selCasaBan2" onchange="montaUrl()">
-            <option>Selecione</option>
-            <option value="portrait_8bit.png">8bit</option>
-            <option value="portrait_amber.png">Amber</option>
-            <option value="portrait_ash.png">Ash</option>
-            <option value="portrait_barley.png">Barley</option>
-            <option value="portrait_bea.png">Bea</option>
-            <option value="portrait_Belle.png">Belle</option>
-            <option value="portrait_bibi.png">Bibi</option>
-            <option value="portrait_bo.png">Bo</option>
-            <option value="portrait_bonnie.png">Bonnie</option>
-            <option value="portrait_brock.png">Brock</option>
-            <option value="portrait_bull.png">Bull</option>
-            <option value="portrait_buzz.png">Buzz</option>
-            <option value="portrait_byron.png">Byron</option>
-            <option value="portrait_carl.png">Carl</option>
-            <option value="portrait_chester.png">Chester</option>
-            <option value="portrait_Colette.png">Colette</option>
-            <option value="portrait_colt.png">Colt</option>
-            <option value="portrait_cornelius.png">Cornelius</option>
-            <option value="portrait_crow_end.png">Crow</option>
-            <option value="portrait_darryl.png">Darryl</option>
-            <option value="portrait_edgar.png">Edgar</option>
-            <option value="portrait_emz.png" selected>Emz</option>
-            <option value="portrait_eve.png">eve</option>
-            <option value="portrait_fang.png">Fang</option>
-            <option value="portrait_frank.png">Frank</option>
-            <option value="portrait_gale.png">Gale</option>
-            <option value="portrait_gene.png">Gene</option>
-            <option value="portrait_Griff.png">Griff</option>
-            <option value="portrait_grom.png">Grom</option>
-            <option value="portrait_jacky.png">Jacky</option>
-            <option value="portrait_janet.png">Janet</option>
-            <option value="portrait_jessie_new.png">Jessie</option>
-            <option value="portrait_leon.png">Leon</option>
-            <option value="portrait_lola.png">Lola</option>
-            <option value="portrait_Lou.png">Lou</option>
-            <option value="portrait_maisie.png">Maisie</option>
-            <option value="portrait_mandy.png">Mandy</option>
-            <option value="portrait_max.png">Max</option>
-            <option value="portrait_Meg.png">Meg</option>
-            <option value="portrait_mike.png">Mike</option>
-            <option value="portrait_mortis.png">Mortis</option>
-            <option value="portrait_mrp.png">Mr. P</option>
-            <option value="portrait_nani.png">Nani</option>
-            <option value="portrait_nita.png">Nita</option>
-            <option value="portrait_otis.png">Otis</option>
-            <option value="portrait_pam.png">Pam</option>
-            <option value="portrait_penny.png">Penny</option>
-            <option value="portrait_piper.png">Piper</option>
-            <option value="portrait_poco.png">Poco</option>
-            <option value="portrait_primo.png">Primo</option>
-            <option value="portrait_rico.png">Rico</option>
-            <option value="portrait_rosa.png">Rosa</option>
-            <option value="portrait_rt.png">RT</option>
-            <option value="portrait_ruffs.png">Ruffs</option>
-            <option value="portrait_sam.png">Sam</option>
-            <option value="portrait_sandy.png">Sandy</option>
-            <option value="portrait_shelly.png">Shelly</option>
-            <option value="portrait_spike.png">Spike</option>
-            <option value="portrait_sprout.png">Sprout</option>
-            <option value="portrait_stu.png">Stu</option>
-            <option value="portrait_surge_end.png">Surge</option>
-            <option value="portrait_tara.png">Tara</option>
-            <option value="portrait_tick.png">Tick</option>
-            <option value="portrait_willow.png">Willow</option>
-        </select>
+        <select id="selCasaBan2" onchange="generateUrl()"></select>
     </div>
     <div>
         Visitante:
-        <select id="selVisitante" onchange="montaUrl()">
-            <option>Selecione</option>
-            <option value="4K TEAM GAMING.png" selected>4K TEAM GAMING</option>
-            <option value="BANANA CLUB.png">BANANA CLUB</option>
-            <option value="CLÃ HOZURA.png">CLÃ HOZURA</option>
-            <option value="ELITE GROUP.png">ELITE GROUP</option>
-            <option value="GAME OVER.png">GAME OVER</option>
-            <option value="LOS BROTHERS.png">LOS BROTHERS</option>
-            <option value="NUCLEAR GAMING.png">NUCLEAR GAMING</option>
-        </select>
+        <select id="selVisitante" onchange="generateUrl()"></select>
 
         Ban 1:
-        <select id="selVisitanteBan1" onchange="montaUrl()">
-            <option>Selecione</option>
-            <option value="portrait_8bit.png">8bit</option>
-            <option value="portrait_amber.png">Amber</option>
-            <option value="portrait_ash.png">Ash</option>
-            <option value="portrait_barley.png">Barley</option>
-            <option value="portrait_bea.png">Bea</option>
-            <option value="portrait_Belle.png">Belle</option>
-            <option value="portrait_bibi.png">Bibi</option>
-            <option value="portrait_bo.png">Bo</option>
-            <option value="portrait_bonnie.png">Bonnie</option>
-            <option value="portrait_brock.png">Brock</option>
-            <option value="portrait_bull.png">Bull</option>
-            <option value="portrait_buzz.png">Buzz</option>
-            <option value="portrait_byron.png">Byron</option>
-            <option value="portrait_carl.png">Carl</option>
-            <option value="portrait_chester.png">Chester</option>
-            <option value="portrait_Colette.png">Colette</option>
-            <option value="portrait_colt.png">Colt</option>
-            <option value="portrait_cornelius.png">Cornelius</option>
-            <option value="portrait_crow_end.png">Crow</option>
-            <option value="portrait_darryl.png">Darryl</option>
-            <option value="portrait_edgar.png">Edgar</option>
-            <option value="portrait_emz.png" selected>Emz</option>
-            <option value="portrait_eve.png">eve</option>
-            <option value="portrait_fang.png">Fang</option>
-            <option value="portrait_frank.png">Frank</option>
-            <option value="portrait_gale.png">Gale</option>
-            <option value="portrait_gene.png">Gene</option>
-            <option value="portrait_Griff.png">Griff</option>
-            <option value="portrait_grom.png">Grom</option>
-            <option value="portrait_jacky.png">Jacky</option>
-            <option value="portrait_janet.png">Janet</option>
-            <option value="portrait_jessie_new.png">Jessie</option>
-            <option value="portrait_leon.png">Leon</option>
-            <option value="portrait_lola.png">Lola</option>
-            <option value="portrait_Lou.png">Lou</option>
-            <option value="portrait_maisie.png">Maisie</option>
-            <option value="portrait_mandy.png">Mandy</option>
-            <option value="portrait_max.png">Max</option>
-            <option value="portrait_Meg.png">Meg</option>
-            <option value="portrait_mike.png">Mike</option>
-            <option value="portrait_mortis.png">Mortis</option>
-            <option value="portrait_mrp.png">Mr. P</option>
-            <option value="portrait_nani.png">Nani</option>
-            <option value="portrait_nita.png">Nita</option>
-            <option value="portrait_otis.png">Otis</option>
-            <option value="portrait_pam.png">Pam</option>
-            <option value="portrait_penny.png">Penny</option>
-            <option value="portrait_piper.png">Piper</option>
-            <option value="portrait_poco.png">Poco</option>
-            <option value="portrait_primo.png">Primo</option>
-            <option value="portrait_rico.png">Rico</option>
-            <option value="portrait_rosa.png">Rosa</option>
-            <option value="portrait_rt.png">RT</option>
-            <option value="portrait_ruffs.png">Ruffs</option>
-            <option value="portrait_sam.png">Sam</option>
-            <option value="portrait_sandy.png">Sandy</option>
-            <option value="portrait_shelly.png">Shelly</option>
-            <option value="portrait_spike.png">Spike</option>
-            <option value="portrait_sprout.png">Sprout</option>
-            <option value="portrait_stu.png">Stu</option>
-            <option value="portrait_surge_end.png">Surge</option>
-            <option value="portrait_tara.png">Tara</option>
-            <option value="portrait_tick.png">Tick</option>
-            <option value="portrait_willow.png">Willow</option>
-        </select>
+        <select id="selVisitanteBan1" onchange="generateUrl()"></select>
 
         Ban 2:
-        <select id="selVisitanteBan2" onchange="montaUrl()">
-            <option>Selecione</option>
-            <option value="portrait_8bit.png">8bit</option>
-            <option value="portrait_amber.png">Amber</option>
-            <option value="portrait_ash.png">Ash</option>
-            <option value="portrait_barley.png">Barley</option>
-            <option value="portrait_bea.png">Bea</option>
-            <option value="portrait_Belle.png">Belle</option>
-            <option value="portrait_bibi.png">Bibi</option>
-            <option value="portrait_bo.png">Bo</option>
-            <option value="portrait_bonnie.png">Bonnie</option>
-            <option value="portrait_brock.png">Brock</option>
-            <option value="portrait_bull.png">Bull</option>
-            <option value="portrait_buzz.png">Buzz</option>
-            <option value="portrait_byron.png">Byron</option>
-            <option value="portrait_carl.png">Carl</option>
-            <option value="portrait_chester.png">Chester</option>
-            <option value="portrait_Colette.png">Colette</option>
-            <option value="portrait_colt.png">Colt</option>
-            <option value="portrait_cornelius.png">Cornelius</option>
-            <option value="portrait_crow_end.png">Crow</option>
-            <option value="portrait_darryl.png">Darryl</option>
-            <option value="portrait_edgar.png">Edgar</option>
-            <option value="portrait_emz.png" selected>Emz</option>
-            <option value="portrait_eve.png">eve</option>
-            <option value="portrait_fang.png">Fang</option>
-            <option value="portrait_frank.png">Frank</option>
-            <option value="portrait_gale.png">Gale</option>
-            <option value="portrait_gene.png">Gene</option>
-            <option value="portrait_Griff.png">Griff</option>
-            <option value="portrait_grom.png">Grom</option>
-            <option value="portrait_jacky.png">Jacky</option>
-            <option value="portrait_janet.png">Janet</option>
-            <option value="portrait_jessie_new.png">Jessie</option>
-            <option value="portrait_leon.png">Leon</option>
-            <option value="portrait_lola.png">Lola</option>
-            <option value="portrait_Lou.png">Lou</option>
-            <option value="portrait_maisie.png">Maisie</option>
-            <option value="portrait_mandy.png">Mandy</option>
-            <option value="portrait_max.png">Max</option>
-            <option value="portrait_Meg.png">Meg</option>
-            <option value="portrait_mike.png">Mike</option>
-            <option value="portrait_mortis.png">Mortis</option>
-            <option value="portrait_mrp.png">Mr. P</option>
-            <option value="portrait_nani.png">Nani</option>
-            <option value="portrait_nita.png">Nita</option>
-            <option value="portrait_otis.png">Otis</option>
-            <option value="portrait_pam.png">Pam</option>
-            <option value="portrait_penny.png">Penny</option>
-            <option value="portrait_piper.png">Piper</option>
-            <option value="portrait_poco.png">Poco</option>
-            <option value="portrait_primo.png">Primo</option>
-            <option value="portrait_rico.png">Rico</option>
-            <option value="portrait_rosa.png">Rosa</option>
-            <option value="portrait_rt.png">RT</option>
-            <option value="portrait_ruffs.png">Ruffs</option>
-            <option value="portrait_sam.png">Sam</option>
-            <option value="portrait_sandy.png">Sandy</option>
-            <option value="portrait_shelly.png">Shelly</option>
-            <option value="portrait_spike.png">Spike</option>
-            <option value="portrait_sprout.png">Sprout</option>
-            <option value="portrait_stu.png">Stu</option>
-            <option value="portrait_surge_end.png">Surge</option>
-            <option value="portrait_tara.png">Tara</option>
-            <option value="portrait_tick.png">Tick</option>
-            <option value="portrait_willow.png">Willow</option>
-        </select>
+        <select id="selVisitanteBan2" onchange="generateUrl()"></select>
     </div>
     <div>
         <input type="text" id="txtUrl" class="url" />
@@ -329,16 +47,19 @@
         <iframe id="iframeBans" src=""></iframe>
     </div>
     <script>
+        teamSelectIds = ["selCasa", "selVisitante"]
+        banSelectIds = ["selCasaBan1", "selCasaBan2", "selVisitanteBan1", "selVisitanteBan2"]
 
-        function montaUrl() {
-            txtUrl = document.getElementById("txtUrl");
+        function generateUrl() {
             selCasa = document.getElementById("selCasa").value;
             selVisitante = document.getElementById("selVisitante").value;
             selCasaBan1 = document.getElementById("selCasaBan1").value;
             selCasaBan2 = document.getElementById("selCasaBan2").value;
             selVisitanteBan1 = document.getElementById("selVisitanteBan1").value;
             selVisitanteBan2 = document.getElementById("selVisitanteBan2").value;
-            txtUrl.value = "bannedListIFRAME.html" +
+            txtUrl = document.getElementById("txtUrl");
+            subDirectory = window.document.location.href.substr(0, window.document.location.href.lastIndexOf("/") + 1);
+            txtUrl.value = subDirectory + "bannedListIFRAME.html" +
                 "?timeCasa=" + selCasa +
                 "&timeVisitante=" + selVisitante +
                 "&casaBan1=" + selCasaBan1 +
@@ -348,6 +69,115 @@
 
             document.getElementById("iframeBans").src = txtUrl.value;
         }
+
+        document.addEventListener('readystatechange', event => { 
+            // When HTML/DOM elements are ready:
+            if (event.target.readyState === "interactive") {   //does same as:  ..addEventListener("DOMContentLoaded"..
+                load(teamSelectIds, teams);
+                load(banSelectIds, brawlers);
+            }
+        });
+
+        
+        function load(selectIds, json) {
+            for (i = 0; i < selectIds.length; i++) {
+                var select = document.getElementById(selectIds[i]);
+
+                for (j = 0; j < json.length; j++) {
+                    var option = document.createElement("option");
+                    option.text = json[j].name;
+                    option.value = json[j].image;
+
+                    select.add(option);
+                }
+            }
+        }
+
+        function loadBrawlers() {
+
+        }
+
+
+        // JSON
+        const teams = [
+            { "name": "Selecione", "image": "", },
+            { "name": "4K TEAM GAMING", "image": "4K TEAM GAMING.png", },
+            { "name": "BANANA CLUB", "image": "BANANA CLUB.png", },
+            { "name": "CLÃ HOZURA", "image": "CLÃ HOZURA.png", },
+            { "name": "ELITE GROUP", "image": "ELITE GROUP.png", },
+            { "name": "GAME OVER", "image": "GAME OVER.png", },
+            { "name": "LOS BROTHERS", "image": "LOS BROTHERS.png", },
+            { "name": "NUCLEAR GAMING", "image": "NUCLEAR GAMING.png", },
+        ]
+
+        const brawlers =[
+            { "name": "Selecione", "image": "", },
+            { "name": "8bit", "image": "portrait_8bit.png", },
+            { "name": "Amber", "image": "portrait_amber.png", },
+            { "name": "Ash", "image": "portrait_ash.png", },
+            { "name": "Barley", "image": "portrait_barley.png", },
+            { "name": "Bea", "image": "portrait_bea.png", },
+            { "name": "Belle", "image": "portrait_Belle.png", },
+            { "name": "Bibi", "image": "portrait_bibi.png", },
+            { "name": "Bo", "image": "portrait_bo.png", },
+            { "name": "Bonnie", "image": "portrait_bonnie.png", },
+            { "name": "Brock", "image": "portrait_brock.png", },
+            { "name": "Bull", "image": "portrait_bull.png", },
+            { "name": "Buzz", "image": "portrait_buzz.png", },
+            { "name": "Byron", "image": "portrait_byron.png", },
+            { "name": "Carl", "image": "portrait_carl.png", },
+            { "name": "Chester", "image": "portrait_chester.png", },
+            { "name": "Colette", "image": "portrait_Colette.png", },
+            { "name": "Colt", "image": "portrait_colt.png", },
+            { "name": "Cornelius", "image": "portrait_cornelius.png", },
+            { "name": "Crow", "image": "portrait_crow_end.png", },
+            { "name": "Darryl", "image": "portrait_darryl.png", },
+            { "name": "Edgar", "image": "portrait_edgar.png", },
+            { "name": "Emz", "image": "portrait_emz.png", },
+            { "name": "Eve", "image": "portrait_eve.png", },
+            { "name": "Fang", "image": "portrait_fang.png", },
+            { "name": "Frank", "image": "portrait_frank.png", },
+            { "name": "Gale", "image": "portrait_gale.png", },
+            { "name": "Gene", "image": "portrait_gene.png", },
+            { "name": "Griff", "image": "portrait_Griff.png", },
+            { "name": "Grom", "image": "portrait_grom.png", },
+            { "name": "Hank", "image": "portrait_hank.png", },
+            { "name": "Jacky", "image": "portrait_jacky.png", },
+            { "name": "Janet", "image": "portrait_janet.png", },
+            { "name": "Jessie", "image": "portrait_jessie_new.png", },
+            { "name": "Leon", "image": "portrait_leon.png", },
+            { "name": "Lola", "image": "portrait_lola.png", },
+            { "name": "Lou", "image": "portrait_Lou.png", },
+            { "name": "Maisie", "image": "portrait_maisie.png", },
+            { "name": "Mandy", "image": "portrait_mandy.png", },
+            { "name": "Max", "image": "portrait_max.png", },
+            { "name": "Meg", "image": "portrait_Meg.png", },
+            { "name": "Mike", "image": "portrait_mike.png", },
+            { "name": "Mortis", "image": "portrait_mortis.png", },
+            { "name": "Mr. P", "image": "portrait_mrp.png", },
+            { "name": "Nani", "image": "portrait_nani.png", },
+            { "name": "Nita", "image": "portrait_nita.png", },
+            { "name": "Otis", "image": "portrait_otis.png", },
+            { "name": "Pam", "image": "portrait_pam.png", },
+            { "name": "Penny", "image": "portrait_penny.png", },
+            { "name": "Piper", "image": "portrait_piper.png", },
+            { "name": "Poco", "image": "portrait_poco.png", },
+            { "name": "Primo", "image": "portrait_primo.png", },
+            { "name": "Rico", "image": "portrait_rico.png", },
+            { "name": "Rosa", "image": "portrait_rosa.png", },
+            { "name": "RT", "image": "portrait_rt.png", },
+            { "name": "Ruffs", "image": "portrait_ruffs.png", },
+            { "name": "Sam", "image": "portrait_sam.png", },
+            { "name": "Sandy", "image": "portrait_sandy.png", },
+            { "name": "Shelly", "image": "portrait_shelly.png", },
+            { "name": "Spike", "image": "portrait_spike.png", },
+            { "name": "Sprout", "image": "portrait_sprout.png", },
+            { "name": "Stu", "image": "portrait_stu.png", },
+            { "name": "Surge", "image": "portrait_surge_end.png", },
+            { "name": "Tara", "image": "portrait_tara.png", },
+            { "name": "Tick", "image": "portrait_tick.png", },
+            { "name": "Willow", "image": "portrait_willow.png", },
+        ]
     </script>
 </body>
 
