@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rainbow</title>
+        <style>
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+}
+#divRainbow {
+  width: 100%;
+  height: 100%;
+  /* background-image: conic-gradient(from 270deg, #ffb9b9, #ffb9c1, #ffb9cd, #ffb9d8, #ffb9e2, #ffb9ea, #ffb9f3, #ffb9fd, #f6b9ff, #e9b9ff, #dfb9ff, #d3b9ff, #cbb9ff, #c5b9ff, #bbb9ff, #b9c3ff, #b9cdff, #b9dcff, #b9ecff, #b9f8ff, #b9fffb, #b9fff3, #b9ffe7, #b9ffdd, #b9ffd0, #b9ffc6, #b9ffc0, #c3ffb9, #cdffb9, #d7ffb9, #e5ffb9, #efffb9, #fffeb9, #fff3b9, #ffe5b9, #ffd8b9, #ffd2b9, #ffc3b9, #ffbbb9); */
+}
+        </style>
+    </head>
+    <body>
+        <div id="divRainbow"></div>
+
+        <script>
+    const MAX_DEGREE = 359.9;
+    const COLORS = ["#cbb9ff", "#bbb9ff", "#b9cdff", "#b9ecff"];
+    
+    var intervalId = setInterval(rotateBackground, 10)
+    var degree = 0;
+    var colorHexa = getColors();
+
+    function rotateBackground() {
+      div = document.getElementById("divRainbow");
+      
+      if (degree > MAX_DEGREE) {
+        degree = 0;
+      }
+
+      // rainbow colors
+      // div.style.backgroundImage = `conic-gradient(from ${degree}deg, #ffb9b9, #ffb9c1, #ffb9cd, #ffb9d8, #ffb9e2, #ffb9ea, #ffb9f3, #ffb9fd, #f6b9ff, #e9b9ff, #dfb9ff, #d3b9ff, #cbb9ff, #c5b9ff, #bbb9ff, #b9c3ff, #b9cdff, #b9dcff, #b9ecff, #b9f8ff, #b9fffb, #b9fff3, #b9ffe7, #b9ffdd, #b9ffd0, #b9ffc6, #b9ffc0, #c3ffb9, #cdffb9, #d7ffb9, #e5ffb9, #efffb9, #fffeb9, #fff3b9, #ffe5b9, #ffd8b9, #ffd2b9, #ffc3b9, #ffbbb9)`
+
+      // green, blue, indigo, violet
+      div.style.backgroundImage = `conic-gradient(from ${degree}deg, ${colorHexa})`
+      degree += 0.1;
+    }
+
+    function getColors() {
+      colors = COLORS.join();
+      reversedColors = COLORS.reverse().join();
+
+      return colors + "," + reversedColors;
+    }
+        </script>
+    </body>
+</html>
