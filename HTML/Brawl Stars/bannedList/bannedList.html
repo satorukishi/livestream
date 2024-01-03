@@ -46,9 +46,11 @@
     <div>
         <iframe id="iframeBans" src=""></iframe>
     </div>
+    <script src="../common/brawlers/js/brawlers.js"></script>
     <script>
         teamSelectIds = ["selCasa", "selVisitante"]
         banSelectIds = ["selCasaBan1", "selCasaBan2", "selVisitanteBan1", "selVisitanteBan2"]
+        brawlers = [{name: "Selecione", image: ""}].concat(jsonBrawlers);
 
         function generateUrl() {
             selCasa = document.getElementById("selCasa").value;
@@ -105,83 +107,7 @@
             { "name": "NUCLEAR GAMING", "image": "NUCLEAR GAMING.png", },
         ]
 
-        const brawlers =[
-            { "name": "Selecione", "image": "", },
-            
-            { "name": "8bit", "image": "8bit_portrait.png", },
-            { "name": "Amber", "image": "amber_portrait.png", },
-            { "name": "Ash", "image": "ash_portrait.png", },
-            { "name": "Barley", "image": "barley_portrait.png", },
-            { "name": "Bea", "image": "bea_portrait.png", },
-            { "name": "Belle", "image": "Belle_portrait.png", },
-            { "name": "Bibi", "image": "bibi_portrait.png", },
-            { "name": "Bo", "image": "bo_portrait.png", },
-            { "name": "Bonnie", "image": "bonnie_portrait.png", },
-            { "name": "Brock", "image": "brock_portrait.png", },
-            { "name": "Bull", "image": "bull_portrait.png", },
-            { "name": "Buster", "image": "buster_portrait.png", },
-            { "name": "Buzz", "image": "buzz_portrait.png", },
-            { "name": "Byron", "image": "byron_portrait.png", },
-            { "name": "Carl", "image": "carl_portrait.png", },
-            { "name": "Charlie", "image": "charlie_portrait.png", },
-            { "name": "Chester", "image": "chester_portrait.png", },
-            { "name": "Chuck", "image": "chuck_portrait.png", },
-            { "name": "Colette", "image": "Colette_portrait.png", },
-            { "name": "Colt", "image": "colt_portrait.png", },
-            { "name": "Cornelius", "image": "cornelius_portrait.png", },
-            { "name": "Crow", "image": "crow_end_portrait.png", },
-            { "name": "Darryl", "image": "darryl_portrait.png", },
-            { "name": "Doug", "image": "doug_portrait.png", },
-            { "name": "Edgar", "image": "edgar_portrait.png", },
-            { "name": "Emz", "image": "emz_portrait.png", },
-            { "name": "Eve", "image": "eve_portrait.png", },
-            { "name": "Fang", "image": "fang_portrait.png", },
-            { "name": "Frank", "image": "frank_portrait.png", },
-            { "name": "Gale", "image": "gale_portrait.png", },
-            { "name": "Gene", "image": "gene_portrait.png", },
-            { "name": "Gray", "image": "Gray_portrait.png", },
-            { "name": "Griff", "image": "Griff_portrait.png", },
-            { "name": "Grom", "image": "grom_portrait.png", },
-            { "name": "Gus", "image": "gus_portrait.png", },
-            { "name": "Hank", "image": "hank_portrait.png", },
-            { "name": "Jacky", "image": "jacky_portrait.png", },
-            { "name": "Janet", "image": "janet_portrait.png", },
-            { "name": "Jessie", "image": "jessie_new_portrait.png", },
-            { "name": "Leon", "image": "leon_portrait.png", },
-            { "name": "Lola", "image": "lola_portrait.png", },
-            { "name": "Lou", "image": "Lou_portrait.png", },
-            { "name": "Maisie", "image": "maisie_portrait.png", },
-            { "name": "Mandy", "image": "mandy_portrait.png", },
-            { "name": "Max", "image": "max_portrait.png", },
-            { "name": "Meg", "image": "Meg_portrait.png", },
-            { "name": "Mike", "image": "mike_portrait.png", },
-            { "name": "Mortis", "image": "mortis_portrait.png", },
-            { "name": "Mr. P", "image": "mrp_portrait.png", },
-            { "name": "Nani", "image": "nani_portrait.png", },
-            { "name": "Nita", "image": "nita_portrait.png", },
-            { "name": "Otis", "image": "otis_portrait.png", },
-            { "name": "Pam", "image": "pam_portrait.png", },
-            { "name": "Pearl", "image": "pearl_portrait.png", },
-            { "name": "Penny", "image": "penny_portrait.png", },
-            { "name": "Piper", "image": "piper_portrait.png", },
-            { "name": "Poco", "image": "poco_portrait.png", },
-            { "name": "Primo", "image": "primo_portrait.png", },
-            { "name": "Rico", "image": "rico_portrait.png", },
-            { "name": "Rosa", "image": "rosa_portrait.png", },
-            { "name": "RT", "image": "rt_portrait.png", },
-            { "name": "Ruffs", "image": "ruffs_portrait.png", },
-            { "name": "Sam", "image": "sam_portrait.png", },
-            { "name": "Sandy", "image": "sandy_portrait.png", },
-            { "name": "Shelly", "image": "shelly_portrait.png", },
-            { "name": "Spike", "image": "spike_portrait.png", },
-            { "name": "Sprout", "image": "sprout_portrait.png", },
-            { "name": "Squeak", "image": "squeak_portrait.png", },
-            { "name": "Stu", "image": "stu_portrait.png", },
-            { "name": "Surge", "image": "surge_end_portrait.png", },
-            { "name": "Tara", "image": "tara_portrait.png", },
-            { "name": "Tick", "image": "tick_portrait.png", },
-            { "name": "Willow", "image": "willow_portrait.png", },
-        ]
+        
     </script>
 </body>
 

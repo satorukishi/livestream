@@ -1,134 +1,114 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>Brawl Stars Random Pick</title>
   <style>
-@media (max-width: 767px) {
-    .carousel-inner .carousel-item > div {
-        display: none;
+    body {
+      margin: 0px;
+      width: 2304px; /*120% de 1920px*/
+      background-image: url('../common/background/BlueSkull_Default.jpg');
     }
-    .carousel-inner .carousel-item > div:first-child {
-        display: block;
-    }
-}
 
-.carousel-inner .carousel-item.active,
-.carousel-inner .carousel-item-next,
-.carousel-inner .carousel-item-prev {
-    display: flex;
-}
-
-/* medium and up screens */
-@media (min-width: 768px) {
-    
-    .carousel-inner .carousel-item-end.active,
-    .carousel-inner .carousel-item-next {
-      transform: translateX(25%);
+    div.container {
+      height: 100%;
     }
-    
-    .carousel-inner .carousel-item-start.active, 
-    .carousel-inner .carousel-item-prev {
-      transform: translateX(-25%);
+    div.carousel-item {
+      display: inline-block;
+      width: 16.52%;
+      background-color: green;
     }
-}
+    img.img-brawler {
+      max-width: 90%;
+      max-height: 192px;
+      border: solid black 1px;
+    }
+    div.carousel-inner {
+      position: absolute;
+      white-space: nowrap;
+      height: 256px;
+      width: 2304px; /*120% de 1920px*/
+      margin-top: -128px;
+      width: 100%;
+      top: 50%;
+      vertical-align: middle;
+      animation-name: transform-translateX;
+      animation-duration: 2400s;
+      animation-timing-function: linear;
+    }
 
-.carousel-inner .carousel-item-end,
-.carousel-inner .carousel-item-start { 
-  transform: translateX(0);
-}
+    /* The animation code */
+    @keyframes transform-translateX {
+      from {transform: translateX(0px);}
+      to {transform: translateX(-3686400px);} /* */
+    }
   </style>
 </head>
 <body>
-  <div class="container text-center my-3">
-    <div class="row mx-auto my-auto justify-content-center">
-      <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner" role="listbox">
-          <div class="carousel-item active">
-            <div class="col-md-3">
-              <div class="card">
-                <div class="card-img">
-                  <img src="//via.placeholder.com/500x400/31f?text=1" class="img-fluid">
-                </div>
-                <div class="card-img-overlay">Slide 1</div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="col-md-3">
-              <div class="card">
-                <div class="card-img">
-                  <img src="//via.placeholder.com/500x400/e66?text=2" class="img-fluid">
-                </div>
-                <div class="card-img-overlay">Slide 2</div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="col-md-3">
-              <div class="card">
-                <div class="card-img">
-                  <img src="//via.placeholder.com/500x400/7d2?text=3" class="img-fluid">
-                </div>
-                <div class="card-img-overlay">Slide 3</div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="col-md-3">
-              <div class="card">
-                <div class="card-img">
-                  <img src="//via.placeholder.com/500x400?text=4" class="img-fluid">
-                </div>
-                <div class="card-img-overlay">Slide 4</div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="col-md-3">
-              <div class="card">
-                <div class="card-img">
-                  <img src="//via.placeholder.com/500x400/aba?text=5" class="img-fluid">
-                </div>
-                <div class="card-img-overlay">Slide 5</div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="col-md-3">
-              <div class="card">
-                <div class="card-img">
-                  <img src="//via.placeholder.com/500x400/fc0?text=6" class="img-fluid">
-                </div>
-                <div class="card-img-overlay">Slide 6</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        </a>
-        <a class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        </a>
-      </div>
-    </div>
+  <div class="container">
+    <div id="carousel" class="carousel-inner"></div>
   </div>
-  <script>
-    let items = document.querySelectorAll('.carousel .carousel-item')
+  <script src="../common/brawlers/js/brawlers.js"></script>
+  <script type="text/javascript">
+    const carousel = document.getElementById("carousel");
+    maxRepeat = 7;
+    list = [0, 1, 2, 3, 4, 5, 6];
+    isDebug = 0;
+    if (isDebug) {
+      addAllBrawlers();
+    } else {
+      // add initial brawlers
+      for (i = 0; i < maxRepeat; i++) {
+        const brawler = jsonBrawlers[i];
+        addBrawlerToCarousel(brawler);
+      }
 
-items.forEach((el) => {
-    const minPerSlide = 4
-    let next = el.nextElementSibling
-    for (var i=1; i<minPerSlide; i++) {
-        if (!next) {
-            // wrap carousel by using first child
-        	next = items[0]
-      	}
-        let cloneChild = next.cloneNode(true)
-        el.appendChild(cloneChild.children[0])
-        next = next.nextElementSibling
+      // set interval to add brawlers each 200 mm
+      setInterval(addRandomBrawlers, 200);
     }
-})
+
+    
+    function addRandomBrawlers() {
+      const randomBrawler = jsonBrawlers[getNextRandomInt(jsonBrawlers.length)];
+      addBrawlerToCarousel(randomBrawler);
+    }
+    
+    function addAllBrawlers() {
+      for (i = 0; i < jsonBrawlers.length; i++) {
+        const brawler = jsonBrawlers[i];
+        addBrawlerToCarousel(brawler);
+      }
+    }
+
+    function addBrawlerToCarousel(brawler) {
+        const newImage = document.createElement("img");
+        const newDiv = document.createElement("div");
+        const imageFile = brawler.image;
+        const bgColor = brawler.rarities.hexa;
+        
+        newImage.setAttribute("src", `../common/brawlers/${imageFile}`);
+        newImage.setAttribute("class", "img-brawler");
+        newImage.setAttribute("style", `background-color: ${bgColor}`);
+        newDiv.setAttribute("class", "carousel-item");
+
+        newDiv.appendChild(newImage);
+        carousel.appendChild(newDiv);
+    }
+
+    function getNextRandomInt(max) {
+      // no repeat is allowed
+      do {
+        random = Math.floor(Math.random() * max); // returns max - 1;
+      } while (list.includes(random));
+
+      if (list.length == maxRepeat) {
+        list.shift();
+      }
+
+      list.push(random);
+
+      return random;
+    }
+
   </script>
 </body>
-
 </html>
